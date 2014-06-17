@@ -1,4 +1,4 @@
 grails_login
 ============
 
-Sistema de Autenticação de Usuários
+Ferramenta de autenticação de usuários para aplicações web usando Groovy e Grails. 

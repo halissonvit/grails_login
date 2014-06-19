@@ -13,7 +13,6 @@ O controle de acesso dos usuários é baseado no RBAC (role-based access control
 
 
 <h2>Membros</h2>
-
          <ol>Antônio Carlos <acarlossw@gmail.com></ol>
          <ol>Arthur Oliveira <sskkun@gmail.com></ol>
          <ol>Gabriel Benício <gabrielbla85@gmail.com></ol>

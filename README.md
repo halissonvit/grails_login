@@ -1,7 +1,7 @@
 grails_login
 ============
 
-Bootstrap de segurança para aplicações web. O grais_login é um pré-projeto genérico, podendo ser utilizado em outros projetos, que raliza autenticação de usuários e controle de acesso usando Groovy & Grails.
+Bootstrap de segurança para aplicações web. O grais_login é um pré-projeto genérico, podendo ser utilizado em outros projetos, que realiza autenticação de usuários e controle de acesso usando Groovy & Grails.
 
 <h2>Autenticação</h2>
 

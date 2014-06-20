@@ -3,12 +3,13 @@ package grails_login
 
 
 import grails.test.mixin.*
+import org.junit.*
 
 /**
  * See the API for {@link grails.test.mixin.web.ControllerUnitTestMixin} for usage instructions
  */
-@TestFor(AutenticacaoController)
-class AutenticacaoControllerTests {
+@TestFor(AbstractController)
+class AbstractControllerTests {
 
     void testSomething() {
        fail "Implement me"

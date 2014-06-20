@@ -2,6 +2,7 @@
 <head>
 	<meta name="layout" content="main"/>
 	<title>Login</title>
+    <r:require modules="bootstrap"/>
 </head>
 
 <body>

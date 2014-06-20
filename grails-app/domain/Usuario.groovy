@@ -1,21 +1,30 @@
+import grails.plugin.bcrypt.BCrypt
+
 class Usuario {
-	def bcryptService
+    String login
+    String password
+    String nome
+    Boolean admin
 
-	String login
-	String password
-	String nome
+//    static hasMany = [papeis: Papel]
+//    static belongsTo = [Papel]
 
-	String toString() {
-		login
-	}
+    static constraints = {
+        nome()
+        login(unique: true)
+        password(password: true, display: false)
+        admin bindable: false, display: false
+    }
 
-	static constraints = {
-		login(unique: true)
-		password(password: true)
-		nome()
-	}
+    def beforeInsert() {
+        password = BCrypt.hashpw(password, BCrypt.gensalt())
+    }
 
-	def beforeInsert() {
-		this.password = bcryptService.hashPassword(password)
-	}
+    String toString() {
+        login
+    }
+
+    boolean podeAcessar(String funcionalidade) {
+        admin
+    }
 }

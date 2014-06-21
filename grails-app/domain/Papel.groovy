@@ -1,9 +1,12 @@
 class Papel {
     String nome
 
-
-//    static hasMany = [features: Funcionalidade, usuarios: Usuario]
+    static hasMany = [features: Funcionalidade]
 
     static constraints = {
+    }
+
+    String toString() {
+        nome
     }
 }

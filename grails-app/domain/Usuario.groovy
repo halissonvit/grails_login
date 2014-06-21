@@ -4,15 +4,14 @@ class Usuario {
     String login
     String password
     String nome
-    Boolean admin
+    Boolean admin = false
 
-//    static hasMany = [papeis: Papel]
-//    static belongsTo = [Papel]
+    static hasMany = [papeis: Papel]
 
     static constraints = {
         nome()
         login(unique: true)
-        password(password: true, display: false)
+        password(password: true)
         admin bindable: false, display: false
     }
 

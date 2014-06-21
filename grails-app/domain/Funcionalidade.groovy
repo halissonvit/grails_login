@@ -4,4 +4,8 @@ class Funcionalidade {
 
     static constraints = {
     }
+
+    String toString() {
+        nome
+    }
 }

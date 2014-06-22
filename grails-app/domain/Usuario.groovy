@@ -24,6 +24,6 @@ class Usuario {
     }
 
     boolean podeAcessar(String funcionalidade) {
-        admin
+        funcionalidade && (admin || papeis.any { it.podeAcessar(funcionalidade) })
     }
 }

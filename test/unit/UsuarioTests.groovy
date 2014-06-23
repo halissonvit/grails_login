@@ -30,4 +30,32 @@ class UsuarioTests {
         usuario.papeis = [papel]
         assertTrue(usuario.podeAcessar(funcionalidade.nome))
     }
+
+    void testPrecisaDeConfirmacaoDeSenhaIdenticaParaSerValido() {
+        usuario.nome = "show"
+        usuario.email = "show@show.om"
+        usuario.senha = "123"
+        assertFalse(usuario.validate())
+    }
+
+    void testEncriptaSenhaAntesDeSalvar() {
+        assertFalse(usuarioValidoPersistido.senha == "123")
+    }
+
+    void testAlterarSenhaDeveVerificarSeSenhaAtualEstaCorretaAntesDeAlterar() {
+        usuario = usuarioValidoPersistido
+        assertFalse(usuario.alterarSenha("senhaInvalida", "novaSenha", null))
+    }
+
+    void testAlterarSenhaDeveVerificarSeConfirmacaoDeNovaSenhaEstaCorretaAntesDeAlterar() {
+        usuario = usuarioValidoPersistido
+        assertFalse(usuario.alterarSenha("123", "novaSenha", null))
+        assertTrue(usuario.alterarSenha("123", "novaSenha", "novaSenha"))
+    }
+
+    private Usuario getUsuarioValidoPersistido(Map params = [nome: "show", email: "w@show.com", senha: "123", confirmacaoDeSenha: '123']) {
+        Usuario usuario = new Usuario(params)
+        usuario.save(flush: true)
+        usuario
+    }
 }

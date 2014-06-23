@@ -8,9 +8,9 @@ class AutenticacaoService {
         session.usuario = usuario
     }
 
-    boolean autenticaUsuario(String login, String password, session) {
-        def usuario = Usuario.findByLogin(login)
-        if (usuario && bcryptService.checkPassword(password, usuario.password)) {
+    boolean autenticaUsuario(String email, String password, session) {
+        def usuario = Usuario.findByEmail(email)
+        if (usuario && bcryptService.checkPassword(password, usuario.senha)) {
             colocaUsuarioNaSessao(usuario, session)
             return true
         } else {

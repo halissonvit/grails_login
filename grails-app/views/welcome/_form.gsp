@@ -1,35 +1,33 @@
-
 <div class="fieldcontain ${hasErrors(bean: usuarioInstance, field: 'nome', 'error')} ">
     <label for="nome">
-        <g:message code="usuario.nome.label" default="Nome" />
+        <g:message code="usuario.nome.label" default="Nome"/>
 
     </label>
     <g:textField name="nome" value="${usuarioInstance?.nome}"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: usuarioInstance, field: 'login', 'error')} ">
-	<label for="login">
-		<g:message code="usuario.login.label" default="Login" />
-		
-	</label>
-	<g:textField name="login" value="${usuarioInstance?.login}"/>
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: usuarioInstance, field: 'password', 'error')} ">
-    <label for="password">
-        <g:message code="usuario.password.label" default="Password" />
+<div class="fieldcontain ${hasErrors(bean: usuarioInstance, field: 'email', 'error')} ">
+    <label for="email">
+        <g:message code="usuario.email.label" default="email"/>
 
     </label>
-    <g:field type="password" name="password" value="${usuarioInstance?.password}"/>
+    <g:field type="email" name="email" value="${usuarioInstance?.email}"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: usuarioInstance, field: 'password', 'error')} ">
-    <label for="password">
-        <g:message code="usuario.passwordConfirmation.label" default="Password Confirmation" />
+<div class="fieldcontain ${hasErrors(bean: usuarioInstance, field: 'senha', 'error')} ">
+    <label for="senha">
+        <g:message code="usuario.senha.label" default="Senha"/>
 
     </label>
-    <g:field type="password" name="password" value="${usuarioInstance?.password}"/>
+    <g:passwordField name="senha" value="${usuarioInstance?.senha}"/>
 </div>
 
+<div class="fieldcontain ${hasErrors(bean: usuarioInstance, field: 'confirmacaoDeSenha', 'error')} ">
+    <label for="confirmacaoDeSenha">
+        <g:message code="usuario.confirmacaoDeSenha.label" default="Confirmação de Senha"/>
+
+    </label>
+    <g:passwordField name="confirmacaoDeSenha" value="${usuarioInstance?.confirmacaoDeSenha}"/>
 </div>
+
 

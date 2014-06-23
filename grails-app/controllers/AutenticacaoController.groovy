@@ -10,17 +10,17 @@ class AutenticacaoController {
     }
 
     def authenticate = {
-        if (!params.login || !params.password) {
+        if (!params.email || !params.password) {
             flash.message = message(code: 'authentication.login.invalid.params')
             redirect(action: "login")
         }
 
-        if (autenticacaoService.autenticaUsuario(params.login, params.password)) {
+        if (autenticacaoService.autenticaUsuario(params.email, params.senha, session)) {
             flash.message = message(code: 'authentication.login.success.message', args: [session.usuario.nome])
             redirect(controller: "welcome")
         } else {
-            flash.message = message(code: 'authentication.login.failure.message', args: [params.login])
-            redirect(action: "login")
+            flash.message = message(code: 'authentication.login.failure.message', args: [params.email])
+            render(view: "login")
         }
     }
 

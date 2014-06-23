@@ -12,6 +12,7 @@ class BootStrap {
     }
     def destroy = {
     }
+
     private void crieUsuarios() {
 
     }
@@ -21,6 +22,11 @@ class BootStrap {
                 "Administração": [
                         "Visualizar propriedades avançadas de usuários",
                         "Cadastrar Administradores"
+                ],
+                "Gerência"     : [
+                        "Gerenciar Usuários",
+                        "Gerenciar Papéis",
+                        "Gerenciar Funcionalidades"
                 ]
         ]
 

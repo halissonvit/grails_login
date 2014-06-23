@@ -1,4 +1,7 @@
 class Papel {
+    Date dateCreated
+    Date lastUpdated
+
     String nome
 
     static hasMany = [funcionalidades: Funcionalidade]

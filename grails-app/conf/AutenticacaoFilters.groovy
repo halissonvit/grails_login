@@ -6,7 +6,12 @@ class AutenticacaoFilters {
     def I18nService i18nService
     def UsuarioService usuarioService
 
-    def noAuthenticationNeeded = [autenticacao: ['login', 'authenticate', 'index'], welcome: ['index', 'primeiroAcesso', 'primeiroAdmin']]
+    def noAuthenticationNeeded = [
+            autenticacao: ['login', 'authenticate', 'index'],
+            welcome     : ['index', 'primeiroAcesso', 'primeiroAdmin'],
+            password    : ['esqueci', 'gerarEsqueciSenha']
+
+    ]
 
     def filters = {
         primeiroAcesso(controller: '*', action: '*') {

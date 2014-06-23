@@ -1,6 +1,9 @@
 import grails.plugin.bcrypt.BCrypt
 
 class Usuario {
+    Date dateCreated
+    Date lastUpdated
+
     String senha
     String confirmacaoDeSenha
     String nome
@@ -10,6 +13,7 @@ class Usuario {
     static transients = ["confirmacaoDeSenha"]
 
     static hasMany = [papeis: Papel]
+    static hasOne = [esqueciMinhaSenha: EsqueciMinhaSenha]
 
     static constraints = {
         nome()
@@ -17,9 +21,10 @@ class Usuario {
         senha password: true
         confirmacaoDeSenha bindable: true
         senha validator: { val, obj ->
-            if (val != obj.confirmacaoDeSenha) return ['senhaNaoConfere']
+            if (!obj.id && val != obj.confirmacaoDeSenha) return ['senhaNaoConfere']
         }
         admin bindable: false
+        esqueciMinhaSenha nullable: true
     }
 
     def beforeInsert() {
@@ -27,7 +32,7 @@ class Usuario {
     }
 
     String toString() {
-        login
+        email
     }
 
     boolean podeAcessar(String funcionalidade) {
@@ -60,5 +65,10 @@ class Usuario {
 
     private encripteSenha() {
         confirmacaoDeSenha = senha = BCrypt.hashpw(senha, BCrypt.gensalt())
+    }
+
+    void gerarEsqueciMinhaSenha() {
+        esqueciMinhaSenha =  EsqueciMinhaSenha.build()
+        save()
     }
 }

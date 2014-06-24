@@ -9,11 +9,8 @@ A autenticação do usuário é feita com e-mail e senha. A senha é criptografa
 
 Feita a comparação da senha, a sessão do usuário será mantida com um sessionId via cookies.
 
-<<<<<<< HEAD
-=======
 Para recuperar a senha, o usuário deve fornercer o e-mail. Após validar o e-mail, é enviado um link para o e-mail cadastrado onde o usuário pode redefinir a senha.
 
->>>>>>> d1c5b8a07cdf6cead2548b8b30d430220a64cd5c
 <h2>Controle de Acesso</h2>
 
 O controle de acesso dos usuários é baseado no RBAC (role-based access control), que é um padrão para restringir o acesso ao sistema para usuários autenticados. O RBAC é baseado em níveis hieráquicos, onde são definidos os acessos as funcionalidades e informações para grupos/perfís de usuários do sistema. Assim, além de criar usuários ou grupos de usuários que irão acessar determinado recurso, é possível também criar grupos de recursos e níveis de recursos que serão acessados.

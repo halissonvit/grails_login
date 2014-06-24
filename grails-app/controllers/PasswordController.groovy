@@ -23,7 +23,7 @@ class PasswordController {
             redirect(controller: 'usuario', action: 'show', id: usuario.id)
         } else {
             flash.message = "Erro ao alterar a senha, verifique se digitou a senha atual corretamente, e se a verificação de senha está correta!"
-            render(view: 'index', model: [usuarioInstance: usuario])
+            render(view: 'index', model: [usuarioInstance: usuario, error: true])
         }
     }
 

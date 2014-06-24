@@ -15,6 +15,8 @@ class WelcomeController {
         if (usuarioService.primeiroAcesso) {
             def usuario = new Usuario(params)
             usuario.admin = true
+            usuario.senha = params.senha
+            usuario.confirmacaoDeSenha = params.confirmacaoDeSenha
             if (!usuario.save(flush: true)) {
                 render(view: "primeiroAcesso", model: [usuarioInstance: usuario])
                 return

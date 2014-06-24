@@ -6,6 +6,7 @@ class Funcionalidade {
     String grupo
 
     static constraints = {
+        nome unique: ['grupo']
     }
 
     String toString() {

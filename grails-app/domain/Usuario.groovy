@@ -16,15 +16,19 @@ class Usuario {
     static hasOne = [esqueciMinhaSenha: EsqueciMinhaSenha]
 
     static constraints = {
-        nome()
-        email email: true
-        senha password: true
-        confirmacaoDeSenha bindable: true
+        nome nullable: false, blank: false
+        email nullable: false, blank: false, email: true, unique: true
+        senha nullable: false, blank: false, password: true, bindable: false
         senha validator: { val, obj ->
             if (!obj.id && val != obj.confirmacaoDeSenha) return ['senhaNaoConfere']
         }
+        confirmacaoDeSenha bindable: false
         admin bindable: false
         esqueciMinhaSenha nullable: true
+    }
+
+    static mapping = {
+        papeis lazy: false
     }
 
     def beforeInsert() {
@@ -36,7 +40,11 @@ class Usuario {
     }
 
     boolean podeAcessar(String funcionalidade) {
-        funcionalidade && (admin || papeis.any { it.podeAcessar(funcionalidade) })
+        funcionalidade && (admin || papeisPodemAcessar(funcionalidade))
+    }
+
+    private boolean papeisPodemAcessar(String funcionalidade) {
+        papeis?.any { it.podeAcessar(funcionalidade) }
     }
 
     boolean equals(o) {
@@ -68,7 +76,7 @@ class Usuario {
     }
 
     void gerarEsqueciMinhaSenha() {
-        esqueciMinhaSenha =  EsqueciMinhaSenha.build()
+        esqueciMinhaSenha = EsqueciMinhaSenha.build()
         save()
     }
 }

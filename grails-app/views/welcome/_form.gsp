@@ -22,7 +22,7 @@
     <g:passwordField name="senha" value="${usuarioInstance?.senha}"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: usuarioInstance, field: 'confirmacaoDeSenha', 'error')} ">
+<div class="fieldcontain ${hasErrors(bean: usuarioInstance, field: 'senha', 'error')} ">
     <label for="confirmacaoDeSenha">
         <g:message code="usuario.confirmacaoDeSenha.label" default="Confirmação de Senha"/>
 

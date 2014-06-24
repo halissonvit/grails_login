@@ -20,8 +20,7 @@ class BootStrap {
     private void crieFuncionalidades() {
         Map funcionalidadesPadrao = [
                 "Administração": [
-                        "Visualizar propriedades avançadas de usuários",
-                        "Cadastrar Administradores"
+                        "Visualizar propriedades avançadas de usuários"
                 ],
                 "Gerência"     : [
                         "Gerenciar Usuários",

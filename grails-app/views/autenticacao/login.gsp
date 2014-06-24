@@ -19,7 +19,7 @@
                         <label for="email">Email:</label>
                     </td>
                     <td>
-                        <input type="text" id="email" name="email" required/>
+                        <input type="email" id="email" name="email" required/>
                     </td>
                 </tr>
 
@@ -38,7 +38,7 @@
         <div class="buttons">
             <span class="button">
                 <input class="save" type="submit" value="Login"/>
-                <input class="save" type="submit" value="Login"/>
+                <g:link controller="password" action="esqueci">Esqueci minha senha</g:link>
             </span>
         </div>
     </g:form>

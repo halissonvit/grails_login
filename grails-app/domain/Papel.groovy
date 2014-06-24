@@ -7,6 +7,11 @@ class Papel {
     static hasMany = [funcionalidades: Funcionalidade]
 
     static constraints = {
+        nome unique: true
+    }
+
+    static mapping = {
+        funcionalidades lazy: false
     }
 
     String toString() {

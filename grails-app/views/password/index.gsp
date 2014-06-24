@@ -26,7 +26,7 @@
 
     <g:form method="post" action="alterar">
         <fieldset class="form">
-            <div class="fieldcontain">
+            <div class="fieldcontain ${error ? 'error' : ''}">
                 <label for="senhaAtual">
                     <g:message code="usuario.senhaAtual.label" default="Senha Atual"/>
 
@@ -36,14 +36,14 @@
         </fieldset>
 
         <fieldset class="form">
-            <div class="fieldcontain ${hasErrors(bean: usuarioInstance, field: 'senha', 'error')} ">
+            <div class="fieldcontain  ${error ? 'error' : ''} ">
                 <label for="senha">
                     <g:message code="usuario.novaSenha.label" default="Nova Senha"/>
                 </label>
                 <g:field type="password" name="senha" value=""/>
             </div>
 
-            <div class="fieldcontain ${hasErrors(bean: usuarioInstance, field: 'confirmacaoDeSenha', 'error')} ">
+            <div class="fieldcontain  ${error ? 'error' : ''} ">
                 <label for="confirmacaoDeSenha">
                     <g:message code="usuario.confirmacaoDeNovaSenha.label" default="Confirmação Da Nova Senha"/>
 

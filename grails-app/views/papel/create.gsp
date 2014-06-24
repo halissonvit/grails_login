@@ -2,23 +2,23 @@
 <html>
 <head>
     <meta name="layout" content="main">
-    <g:set var="entityName" value="${message(code: 'usuario.label', default: 'Usuario')}"/>
+    <g:set var="entityName" value="${message(code: 'papel.label', default: 'Papel')}"/>
     <title><g:message code="default.create.label" args="[entityName]"/></title>
 </head>
 
 <body>
-<a href="#create-usuario" class="skip" tabindex="-1"><g:message code="default.link.skip.label"
-                                                                default="Skip to content&hellip;"/></a>
+<a href="#create-papel" class="skip" tabindex="-1"><g:message code="default.link.skip.label"
+                                                              default="Skip to content&hellip;"/></a>
 
-<g:sePermitido funcionalidade="Gerenciar Usuários">
-    <div id="create-usuario" class="content scaffold-create" role="main">
+<g:sePermitido funcionalidade="Gerenciar Papéis">
+    <div id="create-papel" class="content scaffold-create" role="main">
         <h1><g:message code="default.create.label" args="[entityName]"/></h1>
         <g:if test="${flash.message}">
             <div class="message" role="status">${flash.message}</div>
         </g:if>
-        <g:hasErrors bean="${usuarioInstance}">
+        <g:hasErrors bean="${papelInstance}">
             <ul class="errors" role="alert">
-                <g:eachError bean="${usuarioInstance}" var="error">
+                <g:eachError bean="${papelInstance}" var="error">
                     <li <g:if test="${error in org.springframework.validation.FieldError}">data-field-id="${error.field}"</g:if>><g:message
                             error="${error}"/></li>
                 </g:eachError>
@@ -26,7 +26,7 @@
         </g:hasErrors>
         <g:form action="save">
             <fieldset class="form">
-                <g:render template="form" model="[renderizaCamposDeSenha: true]"/>
+                <g:render template="form"/>
             </fieldset>
             <fieldset class="buttons">
                 <g:submitButton name="create" class="save"

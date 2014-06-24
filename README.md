@@ -25,7 +25,16 @@ Matriz de Controle de Acesso –  este é o modelo mais simples de controle de a
 
 A Matriz de Controle de Acesso pode parecer ideal para controlar acessos, porém sua implementação e um sistema com grande quantidade de sujeitos e objetos, pode gerar uma matriz gigantesca, oque seria muito dispendioso, tanto em termos de armazenamento quanto em gerenciamento.
 
-<h2>Tutorial</h2>
+<h2>Groovy</h2>
+
+É uma linguagem dinâmica de programação orientada a objetos desenvolvida sob a plataforma java.
+
+Com características de Python, Ruby e Smalltalk, faz com que o desenvolvimento de aplicações escritas em Java se torne mais produtivo e rápido, por conta de manipulação de recursos mais fáceis de utilizar do que na linguagem Java (manipulação de XML's). 
+
+<h2>Grails</h2>
+
+É um framework para construção de aplicações web através da linguagem dinâmica Groovy.
+Baseado no Ruby on Rails, provê uma ferramenta MVC para os desenvolvedores de fácil e rápida
 
 <h2>Membros</h2>
 
@@ -34,3 +43,15 @@ Membros: <ol/>Antônio Carlos <acarlossw@gmail.com></ol>
          <ol/>Gabriel Benício <gabrielbla85@gmail.com></ol>
          <ol/>Halisson Vitor <halissonvit@gmail.com></ol>
          <ol/>Rogério Tristão <rogerio.tju@gmail.com> </ol>
+
+<h2>Referência</h2>
+
+Wikipédia. Groovy. Disponívem em: http://pt.wikipedia.org/wiki/Groovy. Acesso em: 23/04/2014
+
+Devmedia. Um pouco de Groovy - Uma linguagem de scripts 100% compatível com Java. Disponívem em: http://www.devmedia.com.br/java-magazine-69-um-pouco-de-groovy-uma-linguagem-de-scripts-100-compativel-com-java/12542. Acesso em: 23/06/2014
+
+Wikipédia. Grails. Disponível em: http://pt.wikipedia.org/wiki/Grails. Acesso em: 23/06/2014
+
+Slideshare. Grails o que isso quer dizer. Disponível em: http://pt.slideshare.net/gscordeiro/grails-o-que-isso-quer-dizer. Acesso em: 23/06/2014
+
+Infoq. Grails getting started. Disponível: http://www.infoq.com/minibooks/grails-getting-started. Acesso em: 23/06/2014

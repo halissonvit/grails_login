@@ -7,7 +7,9 @@ Bootstrap de segurança para aplicações web. O grais_login é um pré-projeto 
 
 <h2>Controle de Acesso</h2>
 
-O controle de acesso dos usuários é baseado no RBAC (role-based access control), que é um padrão para restringir o acesso ao sistema para usuários autenticados. O RBAC é baseado em níveis hieráquicos, onde são definidos os acessos as funcionalidades e informações para grupos/perfís de usuários do sistema.  
+O controle de acesso dos usuários é baseado no RBAC (role-based access control), que é um padrão para restringir o acesso ao sistema para usuários autenticados. O RBAC é baseado em níveis hieráquicos, onde são definidos os acessos as funcionalidades e informações para grupos/perfís de usuários do sistema. Assim, além de criar usuários ou grupos de usuários que irão acessar determinado recurso, é possível também criar grupos de recursos e níveis de recursos que serão acessados.
+Uma grande vantagem do RBAC, é a possibilidade de se trabalhar com diferentes níveis de granularidade na segurança do sistema, onde quanto mais alto é o nível de granularidade, maior possibilidades de controles de acesso serão possíveis, por possuir maior detalhamento a nível de objetos acessando e sendo acessados.
+
 
 <h2>Tutorial</h2>
 

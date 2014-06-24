@@ -5,6 +5,10 @@ Bootstrap de segurança para aplicações web. O grais_login é um pré-projeto 
 
 <h2>Autenticação</h2>
 
+A autenticação do usuário é feita com e-mail e senha. A senha é criptografada com hash aleatório utilizando salt. Como isso, a senha nunca irá gerar dois códigos iguais. O hash gerado será utilizado para validar a senha e não poderá ser utilizado para recuperar a senha. Aumentando assim o nível de segurança. 
+
+Feita a comparação da senha, a sessão do usuário será mantida com um sessionId via cookies.
+
 <h2>Controle de Acesso</h2>
 
 O controle de acesso dos usuários é baseado no RBAC (role-based access control), que é um padrão para restringir o acesso ao sistema para usuários autenticados. O RBAC é baseado em níveis hieráquicos, onde são definidos os acessos as funcionalidades e informações para grupos/perfís de usuários do sistema. Assim, além de criar usuários ou grupos de usuários que irão acessar determinado recurso, é possível também criar grupos de recursos e níveis de recursos que serão acessados.

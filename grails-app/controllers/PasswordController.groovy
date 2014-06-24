@@ -32,15 +32,13 @@ class PasswordController {
     def recuperar = {}
 
     def recuperarSenha = {
-        EsqueciMinhaSenha esqueciMinhaSenha = EsqueciMinhaSenha.findByHash(params.key)
+        Usuario usuario = Usuario.findByEsqueciMinhaSenha(params.key)
 
-        if (!esqueciMinhaSenha || !esqueciMinhaSenha.usuario) {
+        if (!params.key || !usuario) {
             flash.message = "Chave de recuperação inválida"
             redirect(controller: 'autenticacao', action: 'login')
             return
         }
-
-        Usuario usuario = esqueciMinhaSenha.usuario
 
         if (usuario.criarSenhaComEsqueciMinhaSenha(params.senha, params.confirmacaoDeSenha) && usuario.merge()) {
             flash.message = "Senha alterada com sucesso"
@@ -65,7 +63,7 @@ class PasswordController {
                     controller: 'password',
                     action: 'recuperar',
                     absolute: true,
-                    params: [key: usuario.esqueciMinhaSenha.hash]
+                    params: [key: usuario.esqueciMinhaSenha]
             )
 
             sendMail {

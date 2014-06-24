@@ -9,11 +9,11 @@ class Usuario {
     String nome
     String email
     Boolean admin = false
+    String esqueciMinhaSenha
 
     static transients = ["confirmacaoDeSenha"]
 
     static hasMany = [papeis: Papel]
-    static hasOne = [esqueciMinhaSenha: EsqueciMinhaSenha]
 
     static constraints = {
         nome nullable: false, blank: false
@@ -93,10 +93,6 @@ class Usuario {
     }
 
     void gerarEsqueciMinhaSenha() {
-        esqueciMinhaSenha?.delete()
-        esqueciMinhaSenha = null
-        save()
-        esqueciMinhaSenha = EsqueciMinhaSenha.build()
-        save()
+        esqueciMinhaSenha = UUID.randomUUID().toString()
     }
 }

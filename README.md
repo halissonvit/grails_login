@@ -9,6 +9,8 @@ A autenticação do usuário é feita com e-mail e senha. A senha é criptografa
 
 Feita a comparação da senha, a sessão do usuário será mantida com um sessionId via cookies.
 
+<h2>Recuperação de Senha</h2>
+
 Para recuperar a senha, o usuário deve fornercer o e-mail. Após validar o e-mail, é enviado um link para o e-mail cadastrado onde o usuário pode redefinir a senha.
 
 <h2>Controle de Acesso</h2>
@@ -23,9 +25,7 @@ Matriz de Controle de Acesso –  este é o modelo mais simples de controle de a
 
 A Matriz de Controle de Acesso pode parecer ideal para controlar acessos, porém sua implementação e um sistema com grande quantidade de sujeitos e objetos, pode gerar uma matriz gigantesca, oque seria muito dispendioso, tanto em termos de armazenamento quanto em gerenciamento.
 
-
 <h2>Tutorial</h2>
-
 
 <h2>Membros</h2>
 

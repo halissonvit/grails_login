@@ -47,7 +47,11 @@ Membros: <ol/>Antônio Carlos <acarlossw@gmail.com></ol>
 <h2>Referência</h2>
 
 Wikipédia. Groovy. Disponívem em: http://pt.wikipedia.org/wiki/Groovy. Acesso em: 23/04/2014
+
 Devmedia. Um pouco de Groovy - Uma linguagem de scripts 100% compatível com Java. Disponívem em: http://www.devmedia.com.br/java-magazine-69-um-pouco-de-groovy-uma-linguagem-de-scripts-100-compativel-com-java/12542. Acesso em: 23/06/2014
+
 Wikipédia. Grails. Disponível em: http://pt.wikipedia.org/wiki/Grails. Acesso em: 23/06/2014
+
 Slideshare. Grails o que isso quer dizer. Disponível em: http://pt.slideshare.net/gscordeiro/grails-o-que-isso-quer-dizer. Acesso em: 23/06/2014
+
 Infoq. Grails getting started. Disponível: http://www.infoq.com/minibooks/grails-getting-started. Acesso em: 23/06/2014

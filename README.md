@@ -39,7 +39,6 @@ Baseado no Ruby on Rails, provê uma ferramenta MVC para os desenvolvedores de f
 <h2>Membros</h2>
 
 Membros: <ol/>Antônio Carlos <acarlossw@gmail.com></ol>
-         <ol/>Arthur Oliveira <sskkun@gmail.com></ol>
          <ol/>Gabriel Benício <gabrielbla85@gmail.com></ol>
          <ol/>Halisson Vitor <halissonvit@gmail.com></ol>
          <ol/>Rogério Tristão <rogerio.tju@gmail.com> </ol>

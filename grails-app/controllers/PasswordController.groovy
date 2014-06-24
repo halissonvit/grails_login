@@ -1,6 +1,6 @@
 class PasswordController {
 
-    static allowedMethods = [index: "GET", alterar: "POST", gerarEsqueciSenha: "POST"]
+    static allowedMethods = [index: "GET", alterar: "POST", gerarEsqueciSenha: "POST", recuperarSenha: "POST"]
 
     def index = {
         Usuario usuario = session.usuario
@@ -18,7 +18,7 @@ class PasswordController {
             return
         }
 
-        if (usuario.alterarSenha(params.senhaAtual, params.senha, params.confirmacaoDeSenha)) {
+        if (usuario.alterarSenha(params.senhaAtual, params.senha, params.confirmacaoDeSenha) && usuario.merge()) {
             flash.message = "Senha alterada com sucesso"
             redirect(controller: 'usuario', action: 'show', id: usuario.id)
         } else {
@@ -29,6 +29,28 @@ class PasswordController {
 
     def esqueci = {}
 
+    def recuperar = {}
+
+    def recuperarSenha = {
+        EsqueciMinhaSenha esqueciMinhaSenha = EsqueciMinhaSenha.findByHash(params.key)
+
+        if (!esqueciMinhaSenha || !esqueciMinhaSenha.usuario) {
+            flash.message = "Chave de recuperação inválida"
+            redirect(controller: 'autenticacao', action: 'login')
+            return
+        }
+
+        Usuario usuario = esqueciMinhaSenha.usuario
+
+        if (usuario.criarSenhaComEsqueciMinhaSenha(params.senha, params.confirmacaoDeSenha) && usuario.merge()) {
+            flash.message = "Senha alterada com sucesso"
+            redirect(controller: 'autenticacao', action: 'login')
+        } else {
+            flash.message = "Erro ao alterar a senha, verifique se digitou a senha atual corretamente, e se a verificação de senha está correta!"
+            render(view: 'index', model: [usuarioInstance: usuario, error: true])
+        }
+    }
+
     def gerarEsqueciSenha = {
         Usuario usuario = Usuario.findByEmail(params.email)
         if (!usuario) {
@@ -38,6 +60,21 @@ class PasswordController {
         } else {
             flash.message = "Instruções enviadas com sucesso para o email!"
             usuario.gerarEsqueciMinhaSenha()
+
+            String linkRecuperarSenha = g.createLink(
+                    controller: 'password',
+                    action: 'recuperar',
+                    absolute: true,
+                    params: [key: usuario.esqueciMinhaSenha.hash]
+            )
+
+            sendMail {
+                async true
+                to usuario.email
+                subject "Recuperação de Senha"
+                html "Para trocar a senha acesse o link: ${linkRecuperarSenha}"
+            }
+
             redirect(controller: 'autenticacao', action: 'login')
         }
     }

@@ -10,6 +10,6 @@ class EsqueciMinhaSenha {
     }
 
     static EsqueciMinhaSenha build() {
-        new EsqueciMinhaSenha(hash: UUID.randomUUID())
+        new EsqueciMinhaSenha(hash: UUID.randomUUID().toString())
     }
 }

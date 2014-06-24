@@ -62,10 +62,27 @@ class Usuario {
         return email.hashCode()
     }
 
-    boolean alterarSenha(String senhaAtual, String novaSenha, String confirmacaoNovaSenha) {
-        if (BCrypt.checkpw(senhaAtual, senha) && novaSenha == confirmacaoNovaSenha) {
+    boolean criarSenhaComEsqueciMinhaSenha(String novaSenha, String confirmacaoNovaSenha) {
+        if (criarNovaSenha(novaSenha, confirmacaoNovaSenha)) {
+            esqueciMinhaSenha = null
+            true
+        } else {
+            false
+        }
+    }
+
+    boolean criarNovaSenha(String novaSenha, String confirmacaoNovaSenha) {
+        if (novaSenha == confirmacaoNovaSenha) {
             senha = novaSenha
             encripteSenha()
+        } else {
+            false
+        }
+    }
+
+    boolean alterarSenha(String senhaAtual, String novaSenha, String confirmacaoNovaSenha) {
+        if (BCrypt.checkpw(senhaAtual, senha)) {
+            criarNovaSenha(novaSenha, confirmacaoNovaSenha)
         } else {
             false
         }
@@ -76,6 +93,9 @@ class Usuario {
     }
 
     void gerarEsqueciMinhaSenha() {
+        esqueciMinhaSenha?.delete()
+        esqueciMinhaSenha = null
+        save()
         esqueciMinhaSenha = EsqueciMinhaSenha.build()
         save()
     }

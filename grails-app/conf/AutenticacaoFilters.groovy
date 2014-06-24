@@ -9,7 +9,7 @@ class AutenticacaoFilters {
     def noAuthenticationNeeded = [
             autenticacao: ['login', 'authenticate', 'index'],
             welcome     : ['index', 'primeiroAcesso', 'primeiroAdmin'],
-            password    : ['esqueci', 'gerarEsqueciSenha']
+            password    : ['esqueci', 'gerarEsqueciSenha', 'recuperar', 'recuperarSenha']
 
     ]
 

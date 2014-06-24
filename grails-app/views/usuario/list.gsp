@@ -34,31 +34,29 @@
             </thead>
             <tbody>
             <g:each in="${usuarioInstanceList}" status="i" var="usuarioInstance">
-                <g:if test="${session.usuario != usuarioInstance}">
-                    <tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
+                <tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 
-                        <td><g:link action="show"
-                                    id="${usuarioInstance.id}">${fieldValue(bean: usuarioInstance, field: "nome")}</g:link></td>
+                    <td><g:link action="show"
+                                id="${usuarioInstance.id}">${fieldValue(bean: usuarioInstance, field: "nome")}</g:link></td>
 
-                        <td>${fieldValue(bean: usuarioInstance, field: "email")}</td>
+                    <td>${fieldValue(bean: usuarioInstance, field: "email")}</td>
 
-                        <g:sePermitido funcionalidade="Visualizar propriedades avançadas de usuários">
-                            <td><g:formatBoolean boolean="${usuarioInstance.admin}"/></td>
-                        </g:sePermitido>
+                    <g:sePermitido funcionalidade="Visualizar propriedades avançadas de usuários">
+                        <td><g:formatBoolean boolean="${usuarioInstance.admin}"/></td>
+                    </g:sePermitido>
 
-                        <td>
-                            <g:if test="${usuarioInstance.admin}">
-                                <g:if test="${session.usuario.admin}">
-                                    <g:render template="acoes" model="[usuarioInstance: usuarioInstance]"/>
-                                </g:if>
-                            </g:if>
-                            <g:else>
+                    <td>
+                        <g:if test="${usuarioInstance.admin}">
+                            <g:if test="${session.usuario.admin}">
                                 <g:render template="acoes" model="[usuarioInstance: usuarioInstance]"/>
-                            </g:else>
-                        </td>
+                            </g:if>
+                        </g:if>
+                        <g:else>
+                            <g:render template="acoes" model="[usuarioInstance: usuarioInstance]"/>
+                        </g:else>
+                    </td>
 
-                    </tr>
-                </g:if>
+                </tr>
             </g:each>
             </tbody>
         </table>
